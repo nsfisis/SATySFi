@@ -74,10 +74,10 @@
                 $out/share/satysfi
             '';
             installPhase = with pkgs; ''
-              cp -r ${lmodern}/share/fonts/opentype/public/lm/* lib-satysfi/dist/fonts/
-              cp -r ${lmmath}/share/fonts/opentype/latinmodern-math.otf lib-satysfi/dist/fonts/
-              cp -r ${ipaexfont}/share/fonts/opentype/* lib-satysfi/dist/fonts/
-              cp -r ${junicode}/share/fonts/junicode-ttf/* lib-satysfi/dist/fonts/
+              # cp -r ${lmodern}/share/fonts/opentype/public/lm/* lib-satysfi/dist/fonts/
+              # cp -r ${lmmath}/share/fonts/opentype/latinmodern-math.otf lib-satysfi/dist/fonts/
+              # cp -r ${ipaexfont}/share/fonts/opentype/* lib-satysfi/dist/fonts/
+              # cp -r ${junicode}/share/fonts/junicode-ttf/* lib-satysfi/dist/fonts/
               make install PREFIX=$out LIBDIR=$out/share/satysfi
               mkdir -p $out/share/satysfi/
               cp -r lib-satysfi/dist/ $out/share/satysfi/
