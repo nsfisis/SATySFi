@@ -38,7 +38,7 @@
         pkgs = import nixpkgs {
           inherit system;
           overlays = [
-            devshell.overlay
+            devshell.overlays.default
           ];
         };
 
@@ -62,7 +62,7 @@
                 (inDirectory "lib-satysfi")
               ];
               exclude = [".merlin"];
-            }) {satysfi = null;};
+            }) {satysfi = "*";};
         duneProjectOverlay = self: super: {
           satysfi = super.satysfi.overrideAttrs (oa: {
             doNixSupport = false;
