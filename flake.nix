@@ -3,7 +3,15 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    opam-nix.url = "github:tweag/opam-nix";
+    opam-repository = {
+      url = "github:ocaml/opam-repository";
+      flake = false;
+    };
+    opam-nix = {
+      url = "github:tweag/opam-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.opam-repository.follows = "opam-repository";
+    };
     satysfi-external-repo = {
       url = "github:gfngfn/satysfi-external-repo";
       flake = false;
