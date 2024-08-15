@@ -81,7 +81,7 @@
                 '/usr/local/share/satysfi"; "/usr/share/satysfi' \
                 $out/share/satysfi
             '';
-            installPhase = with pkgs; ''
+            installPhase = with pkgs; oa.installPhase + ''
               cp -r ${lmodern}/share/fonts/opentype/public/lm/* lib-satysfi/dist/fonts/
               cp -r ${lmmath}/share/fonts/opentype/latinmodern-math.otf lib-satysfi/dist/fonts/
               cp -r ${ipaexfont}/share/fonts/opentype/* lib-satysfi/dist/fonts/
